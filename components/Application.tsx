@@ -71,7 +71,7 @@ export default function Application(props) {
         <h2 className={styles.h2}>Edge Node</h2>
         <p className={styles.p}>
           A fully managed retrieval gateway for just your account data. Pick the data you want to make highly available to your users. Perfect for providing an additional mirror
-          for you data, or making it available to an AI model.
+          for you data, or making it available to an AI model. Storage providers will appreciate you for paying for the unsealed copies and helping them maximize their profit.
         </p>
 
         <div className={styles.selection}>
