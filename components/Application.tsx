@@ -97,12 +97,12 @@ export default function Application(props) {
           onDeltaChange={(e) => setValueDelta(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
-              {Number(100 / price).toFixed(0)} <strong>FIL / month</strong>
+              {Number(100 / price).toFixed(0)} <strong>FIL / mo</strong>
             </Stat>
           }
           two={
             <Stat>
-              20 TB <strong>Storage</strong>
+              20 TB <strong>HDD</strong>
             </Stat>
           }
           three={
@@ -130,12 +130,12 @@ export default function Application(props) {
           onDeltaChange={(e) => setValueDelta(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
-              {Number(500 / price).toFixed(0)} <strong>FIL / month</strong>
+              {Number(500 / price).toFixed(0)} <strong>FIL / mo</strong>
             </Stat>
           }
           two={
             <Stat>
-              100 TB <strong>Storage</strong>
+              100 TB <strong>HDD</strong>
             </Stat>
           }
           three={
@@ -169,12 +169,12 @@ export default function Application(props) {
           onEdgeChange={(e) => setValueEdge(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
-              {Number(100 / price).toFixed(0)} <strong>FIL / month</strong>
+              {Number(100 / price).toFixed(0)} <strong>FIL / mo</strong>
             </Stat>
           }
           two={
             <Stat>
-              10 TB <strong>Storage</strong>
+              10 TB <strong>HDD</strong>
             </Stat>
           }
           three={
@@ -202,12 +202,12 @@ export default function Application(props) {
           onEdgeChange={(e) => setValueEdge(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
-              {Number(250 / price).toFixed(0)} <strong>FIL / month</strong>
+              {Number(250 / price).toFixed(0)} <strong>FIL / mo</strong>
             </Stat>
           }
           two={
             <Stat>
-              50 TB <strong>Storage</strong>
+              50 TB <strong>HDD</strong>
             </Stat>
           }
           three={
@@ -235,12 +235,12 @@ export default function Application(props) {
           onEdgeChange={(e) => setValueEdge(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
-              {Number(500 / price).toFixed(0)} <strong>FIL / month</strong>
+              {Number(500 / price).toFixed(0)} <strong>FIL / mo</strong>
             </Stat>
           }
           two={
             <Stat>
-              100 TB <strong>Storage</strong>
+              100 TB <strong>HDD</strong>
             </Stat>
           }
           three={
@@ -269,12 +269,12 @@ export default function Application(props) {
           onSelectOption={() => setSelection('DATA_TRUNK')}
           one={
             <Stat>
-              {Number(80 / price).toFixed(0)} <strong>FIL / month</strong>
+              {Number(80 / price).toFixed(0)} <strong>FIL / mo</strong>
             </Stat>
           }
           two={
             <Stat>
-              100 TB <strong>Storage</strong>
+              100 TB <strong>HDD</strong>
             </Stat>
           }
           three={<Stat />}
@@ -288,12 +288,12 @@ export default function Application(props) {
           onSelectOption={() => setSelection('DATA_CHEST')}
           one={
             <Stat>
-              {Number(600 / price).toFixed(0)} <strong>FIL / month</strong>
+              {Number(600 / price).toFixed(0)} <strong>FIL / mo</strong>
             </Stat>
           }
           two={
             <Stat>
-              1 PB <strong>Storage</strong>
+              1 PB <strong>HDD</strong>
             </Stat>
           }
           three={<Stat />}
@@ -307,12 +307,12 @@ export default function Application(props) {
           onSelectOption={() => setSelection('DATA_VAULT')}
           one={
             <Stat>
-              {Number(2500 / price).toFixed(0)} <strong>FIL / month</strong>
+              {Number(2500 / price).toFixed(0)} <strong>FIL / mo</strong>
             </Stat>
           }
           two={
             <Stat>
-              5 PB <strong>Storage</strong>
+              5 PB <strong>HDD</strong>
             </Stat>
           }
           three={<Stat />}
@@ -331,12 +331,12 @@ export default function Application(props) {
           onPostgresChange={(e) => setValuePostgres(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
-              {Number(80 / price).toFixed(0)} <strong>FIL / month</strong>
+              {Number(80 / price).toFixed(0)} <strong>FIL / mo</strong>
             </Stat>
           }
           two={
             <Stat>
-              128 GB <strong>Storage</strong>
+              128 GB <strong>HDD</strong>
             </Stat>
           }
           three={<Stat />}

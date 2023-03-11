@@ -17,7 +17,7 @@ export default function DefaultLayout(props) {
           <div className={styles.item}>Manage</div>
           <div className={styles.item}>Settings</div>
         </div>
-        <div className={styles.left}>
+        <div className={styles.spacer}>
           <div className={styles.invisible}>Estuary</div>
         </div>
       </div>

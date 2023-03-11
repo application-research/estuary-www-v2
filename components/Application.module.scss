@@ -7,6 +7,17 @@
   margin-bottom: 16px;
 }
 
+.content {
+  max-width: 768px;
+  width: 100%;
+  margin: 88px auto 0px auto;
+  padding: 0 24px 128px 24px;
+
+  @media (max-width: 768px) {
+    padding: 0 16px 128px 16px;
+  }
+}
+
 .choice {
   display: flex;
   align-items: center;
@@ -20,7 +31,7 @@
   width: 56px;
 
   @media (max-width: 768px) {
-    width: 48px;
+    width: 40px;
   }
 }
 
@@ -32,6 +43,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    padding-right: 0px;
+  }
 }
 
 .stat {
@@ -45,6 +60,10 @@
     text-transform: uppercase;
     letter-spacing: 0.2px;
     color: rgba(0, 0, 0, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    padding-right: 16px;
   }
 }
 
@@ -60,6 +79,10 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    margin: 16px 8px 16px 16px;
+  }
 }
 
 .dot {
@@ -91,13 +114,6 @@
   font-size: 0.8rem;
   line-height: 1.5;
   margin-bottom: 16px;
-}
-
-.content {
-  max-width: 768px;
-  width: 100%;
-  margin: 88px auto 0px auto;
-  padding: 0 24px 128px 24px;
 }
 
 .actions {

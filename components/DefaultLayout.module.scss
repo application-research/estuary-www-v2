@@ -23,6 +23,18 @@
 
 .left {
   flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.spacer {
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .right {
@@ -31,6 +43,11 @@
   border-left: 1px solid var(--color-border);
   position: relative;
   text-align: center;
+
+  @media (max-width: 768px) {
+    text-align: left;
+    padding-left: 8px;
+  }
 }
 
 .title {
@@ -43,6 +60,10 @@
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: 0.1px;
+
+  @media (max-width: 768px) {
+    padding: 0 16px 0 16px;
+  }
 }
 
 .item {
@@ -55,6 +76,10 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.2px;
+
+  @media (max-width: 768px) {
+    margin: 0 8px 0 8px;
+  }
 }
 
 .invisible {
@@ -70,4 +95,8 @@
   opacity: 0;
   user-select: none;
   visibility: hidden;
+
+  @media (max-width: 768px) {
+    padding: 0 16px 0 16px;
+  }
 }
