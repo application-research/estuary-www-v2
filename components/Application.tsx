@@ -55,6 +55,20 @@ export default function Application(props) {
   const [valueDelta, setValueDelta] = React.useState('');
   const [valueEdge, setValueEdge] = React.useState('');
   const [valuePostgres, setValuePostgres] = React.useState('');
+  const [price, setPrice] = React.useState(5);
+
+  React.useEffect(() => {
+    async function init() {
+      const response = await fetch('https://data.storage.market/api/market/filecoin?amount=1');
+      const json = await response.json();
+
+      if (json && json.price) {
+        setPrice(json.price);
+      }
+    }
+
+    init();
+  }, []);
 
   return (
     <DefaultLayout>
@@ -64,6 +78,7 @@ export default function Application(props) {
           If you want more out of Estuary, you can setup additional infrastructure to make Filecoin deals, make your data available for high availability gateway retrieval, or
           manage your index of data.
         </p>
+        <p className={styles.pmono}>$1 USD = ⨎{Number(100 / price / 100).toFixed(2)} FIL</p>
 
         <h2 className={styles.h2} style={{ marginTop: 56 }}>
           Delta Node
@@ -82,7 +97,7 @@ export default function Application(props) {
           onDeltaChange={(e) => setValueDelta(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
-              10 <strong>FIL / month</strong>
+              {Number(100 / price).toFixed(0)} <strong>FIL / month</strong>
             </Stat>
           }
           two={
@@ -115,7 +130,7 @@ export default function Application(props) {
           onDeltaChange={(e) => setValueDelta(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
-              100 <strong>FIL / month</strong>
+              {Number(500 / price).toFixed(0)} <strong>FIL / month</strong>
             </Stat>
           }
           two={
@@ -154,7 +169,7 @@ export default function Application(props) {
           onEdgeChange={(e) => setValueEdge(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
-              10 <strong>FIL / month</strong>
+              {Number(100 / price).toFixed(0)} <strong>FIL / month</strong>
             </Stat>
           }
           two={
@@ -187,7 +202,7 @@ export default function Application(props) {
           onEdgeChange={(e) => setValueEdge(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
-              50 <strong>FIL / month</strong>
+              {Number(250 / price).toFixed(0)} <strong>FIL / month</strong>
             </Stat>
           }
           two={
@@ -220,7 +235,7 @@ export default function Application(props) {
           onEdgeChange={(e) => setValueEdge(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
-              100 <strong>FIL / month</strong>
+              {Number(500 / price).toFixed(0)} <strong>FIL / month</strong>
             </Stat>
           }
           two={
@@ -254,7 +269,7 @@ export default function Application(props) {
           onSelectOption={() => setSelection('DATA_TRUNK')}
           one={
             <Stat>
-              25 <strong>FIL / month</strong>
+              {Number(200 / price).toFixed(0)} <strong>FIL / month</strong>
             </Stat>
           }
           two={
@@ -273,7 +288,7 @@ export default function Application(props) {
           onSelectOption={() => setSelection('DATA_CHEST')}
           one={
             <Stat>
-              240 <strong>FIL / month</strong>
+              {Number(1200 / price).toFixed(0)} <strong>FIL / month</strong>
             </Stat>
           }
           two={
@@ -292,7 +307,7 @@ export default function Application(props) {
           onSelectOption={() => setSelection('DATA_VAULT')}
           one={
             <Stat>
-              1200 <strong>FIL / month</strong>
+              {Number(5000 / price).toFixed(0)} <strong>FIL / month</strong>
             </Stat>
           }
           two={
@@ -316,7 +331,7 @@ export default function Application(props) {
           onPostgresChange={(e) => setValuePostgres(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
-              20 <strong>FIL / month</strong>
+              {Number(80 / price).toFixed(0)} <strong>FIL / month</strong>
             </Stat>
           }
           two={
