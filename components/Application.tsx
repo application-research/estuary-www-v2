@@ -11,19 +11,37 @@ import * as Filecoin from '@common/filecoin';
 
 import PackageJSON from '@root/package.json';
 import DefaultLayout from '@components/DefaultLayout';
+import Input from '@components/Input';
 
 const Selection = (props) => {
   return (
-    <div className={styles.selection}>
-      <div className={styles.radio} />
-      <div className={styles.left}>{props.label}</div>
-      <div className={styles.right}>
-        {props.five}
-        {props.four}
-        {props.three}
-        {props.two}
-        {props.one}
+    <div className={styles.selection} style={props.selected ? { border: `1px solid var(--color-primary)` } : null}>
+      <div className={styles.choice}>
+        <div className={styles.radio} onClick={props.onSelectOption}>
+          {props.selected ? <div className={styles.dot} /> : null}
+        </div>
+        <div className={styles.left}>{props.label}</div>
+        <div className={styles.right}>
+          {props.five}
+          {props.four}
+          {props.three}
+          {props.two}
+          {props.one}
+        </div>
       </div>
+      {props.selected ? (
+        <React.Fragment>
+          {props.onDeltaChange ? <Input label="Delta Node Name" value={props.valueDelta} onChange={props.onDeltaChange} placeholder="example (example.delta.store)" /> : null}
+
+          {props.onEdgeChange ? <Input label="Edge Node Name" value={props.valueEdge} onChange={props.onEdgeChange} placeholder="example (edge.estuary.tech/example)" /> : null}
+
+          {props.onPostgresChange ? <Input label="Postgres Name" value={props.valuePostgres} onChange={props.onPostgresChange} placeholder="example" /> : null}
+
+          <div className={styles.actions}>
+            <button className={styles.button}>Create {props.label}</button>
+          </div>
+        </React.Fragment>
+      ) : null}
     </div>
   );
 };
@@ -33,6 +51,11 @@ const Stat = (props) => {
 };
 
 export default function Application(props) {
+  const [selection, setSelection] = React.useState('DELTA_BASIC');
+  const [valueDelta, setValueDelta] = React.useState('');
+  const [valueEdge, setValueEdge] = React.useState('');
+  const [valuePostgres, setValuePostgres] = React.useState('');
+
   return (
     <DefaultLayout>
       <div className={styles.content}>
@@ -53,6 +76,10 @@ export default function Application(props) {
 
         <Selection
           label="Basic"
+          selected={selection === 'DELTA_BASIC'}
+          onSelectOption={() => setSelection('DELTA_BASIC')}
+          valueDelta={valueDelta}
+          onDeltaChange={(e) => setValueDelta(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
               10 <strong>FIL / month</strong>
@@ -82,6 +109,10 @@ export default function Application(props) {
 
         <Selection
           label="Heavy"
+          selected={selection === 'DELTA_HEAVY'}
+          onSelectOption={() => setSelection('DELTA_HEAVY')}
+          valueDelta={valueDelta}
+          onDeltaChange={(e) => setValueDelta(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
               100 <strong>FIL / month</strong>
@@ -117,6 +148,10 @@ export default function Application(props) {
 
         <Selection
           label="Pond"
+          selected={selection === 'EDGE_POND'}
+          onSelectOption={() => setSelection('EDGE_POND')}
+          valueEdge={valueEdge}
+          onEdgeChange={(e) => setValueEdge(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
               10 <strong>FIL / month</strong>
@@ -146,6 +181,10 @@ export default function Application(props) {
 
         <Selection
           label="Stream"
+          selected={selection === 'EDGE_STREAM'}
+          onSelectOption={() => setSelection('EDGE_STREAM')}
+          valueEdge={valueEdge}
+          onEdgeChange={(e) => setValueEdge(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
               50 <strong>FIL / month</strong>
@@ -175,6 +214,10 @@ export default function Application(props) {
 
         <Selection
           label="Lake"
+          selected={selection === 'EDGE_LAKE'}
+          onSelectOption={() => setSelection('EDGE_LAKE')}
+          valueEdge={valueEdge}
+          onEdgeChange={(e) => setValueEdge(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
               100 <strong>FIL / month</strong>
@@ -207,6 +250,8 @@ export default function Application(props) {
 
         <Selection
           label="Trunk"
+          selected={selection === 'DATA_TRUNK'}
+          onSelectOption={() => setSelection('DATA_TRUNK')}
           one={
             <Stat>
               25 <strong>FIL / month</strong>
@@ -224,6 +269,8 @@ export default function Application(props) {
 
         <Selection
           label="Chest"
+          selected={selection === 'DATA_CHEST'}
+          onSelectOption={() => setSelection('DATA_CHEST')}
           one={
             <Stat>
               240 <strong>FIL / month</strong>
@@ -241,6 +288,8 @@ export default function Application(props) {
 
         <Selection
           label="Vault"
+          selected={selection === 'DATA_VAULT'}
+          onSelectOption={() => setSelection('DATA_VAULT')}
           one={
             <Stat>
               1200 <strong>FIL / month</strong>
@@ -261,6 +310,10 @@ export default function Application(props) {
 
         <Selection
           label="Default"
+          selected={selection === 'POSTGRES_DEFAULT'}
+          onSelectOption={() => setSelection('POSTGRES_DEFAULT')}
+          valuePostgres={valuePostgres}
+          onPostgresChange={(e) => setValuePostgres(Utilities.createSlug(e.target.value))}
           one={
             <Stat>
               20 <strong>FIL / month</strong>

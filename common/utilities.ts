@@ -68,7 +68,7 @@ export function isEmpty(text: any) {
 
 export function createSlug(text: any) {
   if (isEmpty(text)) {
-    return 'untitled';
+    return '';
   }
 
   const a = 'æøåàáäâèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ·/_,:;';
