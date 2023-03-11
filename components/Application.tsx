@@ -269,7 +269,7 @@ export default function Application(props) {
           onSelectOption={() => setSelection('DATA_TRUNK')}
           one={
             <Stat>
-              {Number(200 / price).toFixed(0)} <strong>FIL / month</strong>
+              {Number(80 / price).toFixed(0)} <strong>FIL / month</strong>
             </Stat>
           }
           two={
@@ -288,7 +288,7 @@ export default function Application(props) {
           onSelectOption={() => setSelection('DATA_CHEST')}
           one={
             <Stat>
-              {Number(1200 / price).toFixed(0)} <strong>FIL / month</strong>
+              {Number(600 / price).toFixed(0)} <strong>FIL / month</strong>
             </Stat>
           }
           two={
@@ -307,7 +307,7 @@ export default function Application(props) {
           onSelectOption={() => setSelection('DATA_VAULT')}
           one={
             <Stat>
-              {Number(5000 / price).toFixed(0)} <strong>FIL / month</strong>
+              {Number(2500 / price).toFixed(0)} <strong>FIL / month</strong>
             </Stat>
           }
           two={
